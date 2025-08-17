@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Quarterly Earnings — Reveal.js</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Core styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" id="theme">
+
+  <!-- Syntax highlighting theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/monokai.css">
+
+  <style>
+    .footer { position: absolute; bottom: 12px; left: 20px; font-size: 14px; opacity: .75; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title -->
+      <section>
+        <h1>Quarterly Earnings Report</h1>
+        <p>Technical Consultant</p>
+        <p>Email: <strong>24f2002824@ds.study.iitm.ac.in</strong></p>
+        <aside class="notes">
+          Welcome! This is the opening slide. Mention your role and email for stakeholders.
+        </aside>
+      </section>
+
+      <!-- Markdown slide -->
+      <section data-markdown>
+        <textarea data-template>
+# Results at a Glance
+- **Revenue:** ₹1,250 Cr
+- **YoY Growth:** **14%**
+- **Net Margin:** **18%**
+- **EPS:** ₹12.4
+
+> _This entire slide is written in **Markdown**._
+        </textarea>
+        <aside class="notes">Call out the headline numbers here.</aside>
+      </section>
+
+      <!-- Fragments -->
+      <section>
+        <h2>Operational Highlights</h2>
+        <ul>
+          <li class="fragment">New customers up <strong>22%</strong></li>
+          <li class="fragment">Churn down to <strong>3.1%</strong></li>
+          <li class="fragment">8th consecutive quarter of positive OCF</li>
+        </ul>
+        <aside class="notes">Each bullet appears on click—demo of fragments.</aside>
+      </section>
+
+      <!-- Code samples -->
+      <section>
+        <h2>Code Samples</h2>
+        <pre><code class="language-python">
+def npv(rate, cashflows):
+    return sum(cf / (1 + rate) ** t for t, cf in enumerate(cashflows))
+
+print(npv(0.10, [-1000, 300, 420, 680]))
+        </code></pre>
+
+        <pre><code class="language-javascript">
+const cagr = (end, start, years) => (end / start) ** (1 / years) - 1;
+console.log(cagr(150, 100, 3));
+        </code></pre>
+
+        <aside class="notes">Python for NPV; JS for CAGR.</aside>
+      </section>
+
+      <!-- Math -->
+      <section>
+        <h2>Financial Math</h2>
+        <p>Net Present Value (NPV):</p>
+        <p>$$\mathrm{NPV}=\sum_{t=0}^{n}\frac{C_t}{(1+r)^t}$$</p>
+
+        <p>Compound Annual Growth Rate (CAGR):</p>
+        <p>$$\mathrm{CAGR}=\left(\frac{\text{Ending}}{\text{Beginning}}\right)^{1/n}-1$$</p>
+
+        <aside class="notes">Define each variable: \(C_t\), \(r\), \(n\).</aside>
+      </section>
+
+      <!-- Closing -->
+      <section>
+        <h2>Thank You</h2>
+        <p>Questions?</p>
+        <p>Contact: <a href="mailto:24f2002824@ds.study.iitm.ac.in">24f2002824@ds.study.iitm.ac.in</a></p>
+        <p class="fragment">Press <em>S</em> for speaker notes during the live talk.</p>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js and plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/math/math.js"></script>
+
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+    });
+  </script>
+</body>
+</html>
